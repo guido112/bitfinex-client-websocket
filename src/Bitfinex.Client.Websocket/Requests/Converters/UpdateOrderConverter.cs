@@ -36,6 +36,12 @@ namespace Bitfinex.Client.Websocket.Requests.Converters
                 writer.WriteValue(request.Price.Value.ToString(CultureInfo.InvariantCulture));
             }
 
+            if (request.Lev.HasValue)
+            {
+                writer.WritePropertyName("lev");
+                writer.WriteValue(request.Lev.Value);
+            }
+
             if (request.Amount.HasValue)
             {
                 writer.WritePropertyName("amount");

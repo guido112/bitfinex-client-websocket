@@ -38,6 +38,13 @@ namespace Bitfinex.Client.Websocket.Requests.Orders
         public double? Price { get; set; }
 
         /// <summary>
+        /// Set the leverage for a derivative order, supported by derivative symbol orders only.
+        /// The value should be between 1 and 100 inclusive.
+        /// The field is optional, if omitted the default leverage value of 1 will be used
+        /// </summary>
+        public int? Lev { get; set; }
+
+        /// <summary>
         /// Positive for buy, Negative for sell
         /// </summary>
         public double? Amount { get; set; }
