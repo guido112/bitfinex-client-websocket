@@ -95,6 +95,12 @@ namespace Bitfinex.Client.Websocket.Responses.Orders
                 case "canceled":
                 case var s when s.Contains("canceled"):
                     return OrderStatus.Canceled;
+                case "rsn_dust":
+                case var s when s.Contains("rsn_dust"):
+                    return OrderStatus.RsnDust;
+                case "rsn_pause":
+                case var s when s.Contains("rsn_pause"):
+                    return OrderStatus.RsnPause;
 
                 // must be last, because of statuses like: 'CANCELED was: PARTIALLY FILLED @ PRICE(AMOUNT)',
                 // or 'INSUFFICIENT MARGIN was: PARTIALLY FILLED @ PRICE(AMOUNT)'

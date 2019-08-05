@@ -160,6 +160,8 @@ namespace Bitfinex.Client.Websocket.Responses.Orders
                                   OrderStatus == OrderStatus.PostOnlyCanceled ||
                                   OrderStatus == OrderStatus.RsnPosReduceFlip ||
                                   OrderStatus == OrderStatus.RsnPosReduceIncr ||
+                                  OrderStatus == OrderStatus.RsnDust ||
+                                  OrderStatus == OrderStatus.RsnPause ||
                                   OrderStatus == OrderStatus.Undefined;
 
         internal static void Handle(JToken token, Subject<Order[]> subject)

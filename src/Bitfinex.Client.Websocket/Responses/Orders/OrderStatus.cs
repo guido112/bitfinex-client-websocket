@@ -53,6 +53,16 @@
         /// <summary>
         /// Order was canceled because of insufficient margin
         /// </summary>
-        InsufficientMargin
+        InsufficientMargin,
+
+        /// <summary>
+        /// amount is less than 0.00000001
+        /// </summary>
+        RsnDust,
+
+        /// <summary>
+        /// trading is paused / paused due to AMPL rebase event
+        /// </summary>
+        RsnPause
     }
 }
